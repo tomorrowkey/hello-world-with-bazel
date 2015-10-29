@@ -6,6 +6,7 @@ For more detail information of bazel http://bazel.io/
 
 # Install bazel
 
+This project can be built with Bazel 0.1.1  
 See at http://bazel.io/docs/install.html
 
 # Run
