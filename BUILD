@@ -14,11 +14,13 @@ config_setting (
 
 java_binary (
     name = "runner",
-    srcs = select({
-      ":release": glob(["runner/src/main/**/*.java", "runner/src/release/java/com/example/Environment.java"]),
-      ":debug":   glob(["runner/src/main/**/*.java", "runner/src/debug/java/com/example/Environment.java"]),
-      "//conditions:default": glob(["runner/src/main/**/*.java", "runner/src/debug/java/com/example/Environment.java"]),
-      }),
+    srcs =
+      glob(["runner/src/main/**/*.java"]) +
+      select({
+        ":release": glob(["runner/src/release/java/**/*java"]),
+        ":debug":   glob(["runner/src/debug/java/**/*.java"]),
+        "//conditions:default": glob(["runner/src/debug/java/**/*.java"]),
+        }),
     main_class = "com.example.ProjectRunner",
     deps = [":greeter"],
 )
