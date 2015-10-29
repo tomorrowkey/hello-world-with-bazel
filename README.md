@@ -8,14 +8,20 @@ For more detail information of bazel http://bazel.io/
 
 See at http://bazel.io/docs/install.html
 
-# Build
-
-```
-bazel build :runner
-```
-
 # Run
 
+## debug mode
 ```
 bazel run :runner
+```
+
+or
+
+```
+bazel run --define mode=debug :runner
+```
+
+## release mode
+```
+bazel run --define mode=release :runner
 ```
