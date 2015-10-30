@@ -1,9 +1,12 @@
 package com.example.lib.model;
 
+import net.karneim.pojobuilder.GeneratePojoBuilder;
+
 public class Person {
 
   private String name;
 
+  @GeneratePojoBuilder
   public Person() {
   }
 
